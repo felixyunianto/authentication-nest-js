@@ -23,7 +23,9 @@ const entities = [User];
       database: process.env.DB_NAME,
       entities: entities,
       extra: {
-        ssl: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       },
     }),
     UsersModule,
