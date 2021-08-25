@@ -22,6 +22,10 @@ const entities = [User];
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: entities,
+      synchronize: false,
+      migrations : ["dist/migrations/*{.ts,.js}"],
+      migrationsTableName: 'migrations_typeorm',
+      migrationsRun: true,
       extra: {
         ssl: {
           rejectUnauthorized: false,
